@@ -141,4 +141,4 @@ function update {
 
 # Suppress wrong commands from being saved to history
 
-#zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
+zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
