@@ -54,8 +54,12 @@ yabai -m config insert_window_border_color   0xff$CINSE
 
 
 #yabai -m signal --add event=window_changed \
-    action='WALLPAPER=$(osascript -e "tell application \"System Events\" to picture of desktop 1"); wal -i $WALLPAPER -n'
+    action='WALLPAPER=$(osascript -e "tell application \"System Events\" to picture of desktop 1"); wal -i $WALLPAPER -n; ; ~/.cache/wal/colors.sh'
+
+
+yabai -m signal --add event=space_changed \
+    action="pywal"
 
 
 #yabai -m signal --add event=space_changed \
-    action='pywal'
+    action="WALLPAPER=$(osascript -e 'tell application \"System Events\" to picture of desktop 1'); wal -i $WALLPAPER -n; ~/.cache/wal/colors.sh"

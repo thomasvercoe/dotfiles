@@ -122,14 +122,23 @@ cat ~/.cache/wal/sequences
 source ~/.cache/wal/colors-tty.sh
 
 
-function pywal {
+#function pywal {
     # generate color scheme from current wallpaper
-    current_wallpaper="$(osascript -e 'tell app "finder" to get posix path of (get desktop picture as alias)')"
-    wal -i $current_wallpaper -n
-}
+    #current_wallpaper="$(osascript -e 'tell app "finder" to get posix path of (get desktop picture as alias)')"
+    #wal -i $current_wallpaper -n
+#}
+
+
+#function pywal {
+#    bash ~/scripts/pywal.sh
+#}
 
 
 function update {
 	~/scripts/update-script/update-script.sh
 }
 
+
+# Suppress wrong commands from being saved to history
+
+#zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
