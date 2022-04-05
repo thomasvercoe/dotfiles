@@ -1,0 +1,68 @@
+yabai -m config layout float
+
+#yabai -m config --space 2 layout bsp
+
+yabai -m config window_placement second_child
+
+# Set all padding and gaps to 20pt (default: 0)
+yabai -m config top_padding    40
+yabai -m config bottom_padding 80
+yabai -m config left_padding   20
+yabai -m config right_padding  20
+yabai -m config window_gap     40
+
+# Override gaps for space 2 only
+#yabai -m config --space 2 window_gap 0
+
+yabai -m config auto_balance on
+
+#yabai -m config split_ratio 0.5
+
+yabai -m config focus_follows_mouse off
+
+yabai -m config window_shadow float
+
+yabai -m config window_opacity off
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 0.9
+
+
+# set mouse interaction modifier key (default: fn)
+yabai -m config mouse_modifier Fn
+
+yabai -m config mouse_action2 move
+
+yabai -m config mouse_action2 resize
+
+source ~/.cache/wal/colors.sh # pywal scheme - update if needed
+
+# yabai template colours
+CBACK=$(echo $background | sed 's/#//')
+CFORE=$(echo $foreground | sed 's/#//')
+CACTV=$(echo $color3 | sed 's/#//')
+CNORM=$(echo $color1 | sed 's/#//')
+CINSE=$(echo $foreground | sed 's/#//')
+
+yabai -m config status_bar                   on
+yabai -m config status_bar_background_color  0xff$CBACK
+yabai -m config status_bar_foreground_color  0xff$CFORE
+
+yabai -m config window_border                off
+yabai -m config window_border_width          4
+yabai -m config active_window_border_color   0xff$CACTV
+yabai -m config normal_window_border_color   0xff$CNORM
+yabai -m config insert_window_border_color   0xff$CINSE
+
+
+
+
+#yabai -m signal --add event=window_changed \
+    action='WALLPAPER=$(osascript -e "tell application \"System Events\" to picture of desktop 1"); wal -i $WALLPAPER -n; ; ~/.cache/wal/colors.sh'
+
+
+/usr/local/Cellar/yabai/3.3.10/bin/yabai -m signal --add event=space_changed \
+    action="pywal"
+
+
+#yabai -m signal --add event=space_changed \
+    action="WALLPAPER=$(osascript -e 'tell application \"System Events\" to picture of desktop 1'); wal -i $WALLPAPER -n; ~/.cache/wal/colors.sh"
