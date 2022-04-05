@@ -1,6 +1,6 @@
 yabai -m config layout float
 
-#yabai -m config --space 1 layout bsp
+#yabai -m config --space 2 layout bsp
 
 yabai -m config window_placement second_child
 
@@ -30,6 +30,9 @@ yabai -m config normal_window_opacity 0.9
 # set mouse interaction modifier key (default: fn)
 yabai -m config mouse_modifier Fn
 
+yabai -m config mouse_action2 move
+
+yabai -m config mouse_action2 resize
 
 source ~/.cache/wal/colors.sh # pywal scheme - update if needed
 
@@ -57,7 +60,7 @@ yabai -m config insert_window_border_color   0xff$CINSE
     action='WALLPAPER=$(osascript -e "tell application \"System Events\" to picture of desktop 1"); wal -i $WALLPAPER -n; ; ~/.cache/wal/colors.sh'
 
 
-yabai -m signal --add event=space_changed \
+/usr/local/Cellar/yabai/3.3.10/bin/yabai -m signal --add event=space_changed \
     action="pywal"
 
 
