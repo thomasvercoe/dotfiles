@@ -5,6 +5,5 @@
 
 ## To do
 
-- [ ] fix gtk folder
-- [ ] write script to sys link files
-- [ ] add the rest of the dotfiles from pc
+- [ ] write script to sys link files (probably not going to bother)
+- [x] add the rest of the dotfiles from pc
