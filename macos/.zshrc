@@ -142,3 +142,6 @@ function update {
 # Suppress wrong commands from being saved to history
 
 zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
+
+
+PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
