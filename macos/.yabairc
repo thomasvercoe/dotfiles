@@ -60,8 +60,8 @@ yabai -m config insert_window_border_color   0xff$CINSE
     action='WALLPAPER=$(osascript -e "tell application \"System Events\" to picture of desktop 1"); wal -i $WALLPAPER -n; ; ~/.cache/wal/colors.sh'
 
 
-/usr/local/Cellar/yabai/3.3.10/bin/yabai -m signal --add event=space_changed \
-    action="pywal"
+yabai -m signal --add event=space_changed \
+    action="zsh /Users/thomasvercoe/scripts/pywal.sh"
 
 
 #yabai -m signal --add event=space_changed \
