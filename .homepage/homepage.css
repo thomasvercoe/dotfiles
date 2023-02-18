@@ -1,0 +1,94 @@
+
+html {{
+	font-family: monospace;
+	font-size: 16px;
+	width: 100vw;
+	height: 100vh;
+}}
+
+body {{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	background-color: {color0};
+	color: {color7};
+    overflow: hidden;
+}}
+
+.container {{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+    height: 200%;
+	width: 100%;
+    margin-top: 15%;
+}}
+
+.favorites {{
+	display: flex;
+	flex-direction: row;
+    height: 100%;
+}}
+
+.favorites-list {{
+    display: flex;
+	text-align: center;
+	width: 12rem;
+	margin: 2rem;
+}}
+
+.collapsible {{
+    background-color: {color0};
+    color: {color3};
+    cursor: pointer;
+    padding: .5rem;
+    width: 12rem;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+    font-family: monospace;
+  }}
+  
+  .active, .collapsible:hover {{
+    background-color: {color3};
+    color: {color7};
+  }}
+  
+  .content {{
+    background-color: {color0};
+    max-height: 0;
+    transition: max-height 0.1s ease-out;
+    text-align: center;
+    overflow: hidden;
+    width: 12rem;
+  }}
+
+  
+ul {{
+	list-style: none;
+	padding: 0;
+}}
+
+ul > li > p {{
+	font-weight: bold;
+	text-align: left;
+	border-bottom: 1px solid {color2};
+	padding-right: 100%;
+}}
+
+ul > li > a {{
+	color: {color3};
+	outline: none;
+
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	padding: 0.5rem;
+}}
+
+ul > li > a:hover {{
+	color: {color7};
+	background-color: {color3};
+}}
