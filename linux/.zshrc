@@ -96,6 +96,8 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias off="xset dpms force off && xflock4"
+
 ZSH_CACHE_DIR="$HOME/.cache/oh-my-zsh"
 
 if [[ ! -d $ZSH_CACHE_DIR ]];
